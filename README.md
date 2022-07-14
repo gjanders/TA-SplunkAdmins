@@ -1,20 +1,14 @@
 ## SplunkBase
 This TA will soon be available on splunkbase...
-
 This TA app is the companion app for [Alerts for Splunk Admins](https://splunkbase.splunk.com/app/3796/) or [Alerts for Splunk Admins github](https://github.com/gjanders/SplunkAdmins/)
-
 You may also be interested in [VersionControl For Splunk](https://splunkbase.splunk.com/app/4355/) or perhaps [Decrypt2](https://splunkbase.splunk.com/app/5565/)
 
 ## Introduction
-This application accompanies the Splunk conf 2017 presentation "How did you get so big? Tips and tricks for growing your Splunk installation from 50GB/day to 1TB/day"
-
-The overall idea behind this application is to provide a variety of alerts that detect issues or potential issues within the splunk log files and then advise via an alert that this has occurred
-This application was built as there were a variety of messages in the Splunk console and logs in Splunk that if acted upon could have prevented an issue within the environment.
+This application accompanies the Alerts for SplunkAdmins application on SplunkBase. 
+This TA provides the lookup watcher modular input along with the streamfilter and streamfilterwildcard custom commands. These custom commands are used by a few searches within the Alerts for SplunkAdmins application
 
 ## Installation
-This application can be installed on the search heads, there are some alerts from the Alerts for SplunkAdmins app that will use the custom commands streamfilter or streamfilterwildcard.
-
-The lookup watcher modular input is also included in this application
+This application only needs to be installed on the search heads or search head cluster 
  
 ## Custom search commands
 Due to the current SPL not handling a particular task well, and the lookup commands not supporting regular expressions, I found that the only workable solution was to create a custom lookup command.
