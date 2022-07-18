@@ -1,0 +1,10 @@
+<nav search_view="search">
+  <view name="dispatch_ttl_changer" default='true' />
+  <view name="dispatch_ttl_changer_global" />
+  <view name="search" />
+  <view name="analytics_workspace" />
+  <view name="datasets" />
+  <view name="reports" />
+  <view name="alerts" />
+  <view name="dashboards" />
+</nav>
