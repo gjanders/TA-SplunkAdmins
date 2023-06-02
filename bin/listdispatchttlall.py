@@ -43,7 +43,7 @@ class ListDispatchTTLAllCommand(GeneratingCommand):
         url = url + 'saved/searches/%s/?output_mode=json' % (quote_plus(self.savedsearch))
 
         headers = { 'Authorization': 'Splunk ' + self._metadata.searchinfo.session_key }
-        attempt = requests.get(url, verify=False, headers=headers)
+        attempt = requests.get(url, verify=True, headers=headers)
         if attempt.status_code != 200:
             yield {'result': 'Unknown failure, received a non-200 response code of %s on the URL %s, text result is %s' % (attempt.status_code, url, attempt.text)}
             return

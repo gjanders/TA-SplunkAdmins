@@ -53,6 +53,13 @@ Lookup Watcher generates a log file is created in `$SPLUNK_HOME/var/log/splunk/`
 Feel free to open an issue on github or use the contact author on the SplunkBase link and I will try to get back to you when possible, thanks!
 
 ## Release Notes
+### 1.0.2
+Updated Splunk python SDK to 1.7.3
+
+Changed to verify=False for SSL certificate checking to maintain Splunk Cloud compability
+
+Note: if using this on-prem with company signed SSL certificates you may wish to use the 1.0.1 version as there are no functional changes in this version
+
 ### 1.0.1
 Added custom commands:
 - listdispatchttl

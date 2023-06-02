@@ -124,7 +124,7 @@ class LookupWatcher:
 
         #Verify=false is hardcoded to workaround local SSL issues
         url = 'https://localhost:8089/services/shcluster/captain/info?output_mode=json'
-        res = requests.get(url, headers=headers, verify=False)
+        res = requests.get(url, headers=headers, verify=True)
         if (res.status_code == 503):
             logger.debug("Non-shcluster / standalone instance, safe to run on this node")
         elif (res.status_code != requests.codes.ok):
