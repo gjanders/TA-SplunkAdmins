@@ -53,6 +53,12 @@ Lookup Watcher generates a log file is created in `$SPLUNK_HOME/var/log/splunk/`
 Feel free to open an issue on github or use the contact author on the SplunkBase link and I will try to get back to you when possible, thanks!
 
 ## Release Notes
+### 1.0.4
+Updating python SDK to version 2.0.1
+
+### 1.0.3
+1.0.3 is identical to 1.0.2 with the app.manifest file removed
+
 ### 1.0.2
 Updated Splunk python SDK to 1.7.3
 
