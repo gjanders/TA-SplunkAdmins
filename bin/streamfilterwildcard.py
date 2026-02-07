@@ -102,7 +102,8 @@ class StreamFilterWildcardCommand(StreamingCommand):
         pattern = pattern.replace("'", "")
         pattern = pattern.replace("*", ".*")
         if pattern.find(".*") == 0:
-            pattern = "[^_].*" + pattern[2:]
+            # avoid the _ indexes as a wildcard does not match them by default
+            pattern = "(?!_).*" + pattern[2:]
         pattern = "(?i)^" + pattern + "$"
         return pattern
 
