@@ -65,6 +65,18 @@ class StreamFilterCommand(StreamingCommand):
         **Description:** Field name containign the regular expression pattern to match''',
         require=True, validate=validators.Fieldname())
 
+    def prepare(self) -> None:
+        """Prepare for execution.
+
+        This method should be overridden in search command classes that wish to examine and update their configuration
+        or option settings prior to execution. It is called during the getinfo exchange before command metadata is sent
+        to splunkd.
+        """
+        # this forces the field to exist at the end
+        self.configuration.required_fields = [self.fieldname]
+        # this means we're only sent the field the user asked for
+        self.configuration.clear_required_fields = True
+
     #Filtering function created so we can handle multi-value pattern fields
     def thefilter(self, record, pattern):
         values = ""

@@ -65,6 +65,18 @@ class StreamFilterWildcardCommand(StreamingCommand):
         **Description:** Field name containing the wildcard pattern pattern to match''',
         require=True, validate=validators.Fieldname())
 
+    def prepare(self) -> None:
+        """Prepare for execution.
+
+        This method should be overridden in search command classes that wish to examine and update their configuration
+        or option settings prior to execution. It is called during the getinfo exchange before command metadata is sent
+        to splunkd.
+        """
+        # this forces the field to exist at the end
+        self.configuration.required_fields = [self.fieldname]
+        # this means we're only sent the field the user asked for
+        self.configuration.clear_required_fields = True
+
     #Filter the data based on the passed in Wildcard pattern, this function exists so we can handle mutli-value pattern fields
     def thefilter(self, record, pattern):
         values = ""
