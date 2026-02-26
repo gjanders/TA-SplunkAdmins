@@ -53,6 +53,9 @@ Lookup Watcher generates a log file is created in `$SPLUNK_HOME/var/log/splunk/`
 Feel free to open an issue on github or use the contact author on the SplunkBase link and I will try to get back to you when possible, thanks!
 
 ## Release Notes
+### 1.0.8
+Removing the prepare() function from the streamfilter / streamfilterwildcard custom commands, this is breaking how the command works
+
 ### 1.0.7
 Updated Splunk python SDK from 2.1.0 to 2.1.1
 Added the prepare() function to the streamfilter and streamfilterwildcard custom commands
