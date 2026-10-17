@@ -10,7 +10,7 @@ import requests
 #sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "lib"))
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "lib"))
 
-from splunklib.six.moves.urllib.parse import quote_plus
+from urllib.parse import quote_plus
 from splunklib.searchcommands import dispatch, GeneratingCommand, Configuration, Option
 from splunklib.binding import HTTPError
 

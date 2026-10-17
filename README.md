@@ -53,6 +53,9 @@ Lookup Watcher generates a log file is created in `$SPLUNK_HOME/var/log/splunk/`
 Feel free to open an issue on github or use the contact author on the SplunkBase link and I will try to get back to you when possible, thanks!
 
 ## Release Notes
+### 1.0.10
+Removed dependency on six.py as per issue https://github.com/gjanders/TA-SplunkAdmins/issues/3 (PacaAlpaca). 
+
 ### 1.0.9
 Adding python.required in `inputs.conf` and `commands.conf` as requested by splunkbase, this is supported in 10.2 and above. Harmless warning messages may occur on older Splunk versions.
 
